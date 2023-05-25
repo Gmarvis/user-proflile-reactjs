@@ -3,11 +3,16 @@
 @tailwind utilities;
 
 body {
-  /* background-color: rgb(216, 216, 218); */
+  background-color: rgb(232, 243, 249);
+
 }
 
 .image {
   height: 200px;
   width: 200px;
   border-radius: 50%;
+}
+
+h1 {
+  font-size: 2rem;
 }

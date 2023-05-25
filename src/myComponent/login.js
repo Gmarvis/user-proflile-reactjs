@@ -1,45 +1,22 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useState } from "react";
-
-
-
-/*
-console.log(" works");
-const arr = [1, 2, 3];
-localStorage.setItem("our array", JSON.stringify(arr));
-
-const localItem = JSON.parse(localStorage.getItem("our array"));
-console.log(" this local item", localItem, typeof localItem);
-*/
-// localStorage.clear();
-// localStorage.removeItem('our array')
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
-const [user, setUser] = useState(JSON.parse(localStorage.getItem('userData')))
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("userData")) || null
+  );
 
-// console.log(user)
+  const navigate = useNavigate();
 
-
-        // handle submit
-      // const  onSubmit={(values) => {
-      //     setTimeout(() => {
-      //       alert(JSON.stringify(values, null, 2));
-      //       localStorage.setItem('userData', JSON.stringify(values))
-      //       console.log(values)
-      //     }, 1000);
-      //   }}
-
-      const handleSubmit = ()=>{
-        console.log()
-      }
-
-
+  useEffect(() => {
+    if (user) navigate("/profile");
+  }, []);
 
   return (
     <div className="container flex flex-col text-center md:w-96 mx-auto border-2 p-2 rounded border-indigo-900 h-80 justify-between my-32">
-      <h1 className="header ">Login form</h1>
-      <p>create your acount</p>
+      <h1 className="headerText ">create your acount</h1>
       <Formik
         // initial values with keys
         initialValues={{
@@ -69,14 +46,14 @@ const [user, setUser] = useState(JSON.parse(localStorage.getItem('userData')))
         // handle submit
         onSubmit={(values) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            localStorage.setItem('userData', JSON.stringify(values))
-            console.log(values)
+            // alert(JSON.stringify(values, null, 2));
+            navigate("/profile");
+            localStorage.setItem("userData", JSON.stringify(values));
+            console.log(values);
           }, 1000);
         }}
       >
         <Form className="form flex-1 flex flex-col text-center justify-center justify-between">
-
           <Field
             className="field border p-1 rounded border-indigo-900 outline-none text-sm "
             type="text"
@@ -117,11 +94,21 @@ const [user, setUser] = useState(JSON.parse(localStorage.getItem('userData')))
             component="div"
           />
 
+          <Field
+            className=""
+            type="file"
+            name="avatar"
+            placeholder="upload picture"
+            // ref={register}
+          ></Field>
+
           {/* <br></br>
               <br></br> */}
 
-          <button type="submit" onSubmit={ handleSubmit}
-          className="btn  bg-indigo-900 w-2/5 mx-auto text-red-50 rounded-2xl p-2 ">
+          <button
+            type="submit"
+            className="btn  bg-indigo-900 w-2/5 text-white mx-auto rounded-2xl p-2 "
+          >
             sign up
           </button>
         </Form>
