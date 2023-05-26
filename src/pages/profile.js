@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+  import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useProfile } from "../utils/useLocalStorage";
 
 // import { Formik, Form, Field, ErrorMessage } from "formik";
 // import { useState } from "react";
@@ -8,9 +9,8 @@ import { useNavigate } from "react-router-dom";
 // console.log(activeUser);
 
 export function Profile() {
-  const [activeUser, setactiveUser] = useState(
-    JSON.parse(localStorage.getItem("userData"))
-  );
+  
+  const {value: activeUser} = useProfile()
 
   const navigate = useNavigate();
   // handle logout 
