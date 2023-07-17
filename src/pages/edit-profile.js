@@ -5,14 +5,15 @@ import { useProfile } from "../utils/useLocalStorage";
 
 export function Update() {
   const navigate = useNavigate();
-  const {value, setValue} = useProfile()
+  const { value, setValue } = useProfile();
   return (
     <UserForm
       currentUser={value}
       title="Edit Profile"
+      buttonText="update"
       onSubmit={(values) => {
         setTimeout(() => {
-          setValue(value)
+          setValue(value);
           navigate("/");
           console.log(values);
         }, 1000);

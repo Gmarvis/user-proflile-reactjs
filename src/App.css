@@ -4,7 +4,6 @@
 
 body {
   background-color: rgb(232, 243, 249);
-
 }
 
 .image {
@@ -15,4 +14,63 @@ body {
 
 h1 {
   font-size: 2rem;
+}
+
+.btn {
+  background-color: #282892;
+  border-radius: 1px;
+  padding: 8px;
+}
+
+.profileBtn {
+  border: 1px solid #fff;
+  padding: 5px 10px;
+}
+
+.logout {
+  padding: 0 15px;
+}
+
+.headerText {
+  display: none;
+  color: #fff;
+}
+
+@media screen and (max-width: 770px) {
+  .head {
+    display: none;
+  }
+
+  .headerText {
+    display: block;
+    color: #fff;
+  }
+
+  .profile {
+    width: 90%;
+    height: 25vh;
+    margin: 25% auto;
+  }
+
+  .mainSection {
+    display: block;
+  }
+  .btn {
+    background-color: #282892;
+    border-radius: 1px;
+    padding: 8px;
+  }
+
+  .profileBtn {
+    background-color: #282892;
+
+    border: 1px solid #fff;
+    padding: 5px 10px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .container {
+    width: 90vw;
+  }
 }
