@@ -2,12 +2,139 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,400&family=Permanent+Marker&display=swap");
+
 body {
-  /* background-color: rgb(216, 216, 218); */
+  background-color: rgb(232, 243, 249);
 }
 
 .image {
   height: 200px;
   width: 200px;
   border-radius: 50%;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.btn {
+  background-color: #282892;
+  border-radius: 1px;
+  padding: 8px;
+}
+
+.profile {
+  background-color: #fff;
+}
+
+.profileBtn {
+  border: 1px solid #fff;
+  padding: 5px 10px;
+}
+
+.logout {
+  padding: 0 15px;
+}
+
+.headerText {
+  display: none;
+  color: #fff;
+}
+
+.title {
+  text-align: center;
+  color: #282892;
+  font-family: Montserrat;
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex;
+  background-color: #fff;
+  width: 30vw;
+  margin: 40px auto;
+  height: 80vh;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.field {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  height: 40px;
+  width: 80%;
+  margin: auto;
+  padding: 2px;
+  font-size: 15px;
+  outline: none;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: auto;
+  margin: auto;
+  color: #fff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  gap: 20px;
+}
+
+.error {
+  color: rgb(207, 26, 26);
+  font-size: 12px;
+  margin-left: 2.5rem;
+}
+
+@media screen and (max-width: 770px) {
+  .head {
+    display: none;
+  }
+
+  .container {
+    width: 80vw;
+  }
+
+  .headerText {
+    display: block;
+    color: #fff;
+  }
+
+  .profile {
+    width: 90%;
+    height: 25vh;
+    margin: 25% auto;
+    background-color: #282892;
+  }
+
+  .mainSection {
+    display: block;
+  }
+  .btn {
+    background-color: #282892;
+    border-radius: 1px;
+    padding: 8px;
+  }
+
+  /* .profileBtn {
+    background-color: #282892;
+
+    border: 1px solid #fff;
+    padding: 5px 10px;
+  } */
+}
+.profileBtn {
+  background-color: #282892;
+
+  border: 1px solid #fff;
+  padding: 8px 10px;
+}
+@media screen and (max-width: 660px) {
 }
