@@ -15,7 +15,6 @@ export function Update() {
         setTimeout(() => {
           setValue(value);
           navigate("/");
-          console.log(values);
         }, 1000);
       }}
     />
