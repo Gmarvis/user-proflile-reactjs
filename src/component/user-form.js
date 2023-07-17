@@ -2,8 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 export const UserForm = ({ currentUser, onSubmit, title, buttonText }) => (
-  <div className="container flex flex-col text-center md:w-90 mx-auto border-2 p-2 rounded border-indigo-900 h-80 justify-between my-32">
-    <h1 className="headerText ">{title}</h1>
+  <div className="container">
     <Formik
       initialValues={currentUser}
       validate={(values) => {
@@ -28,42 +27,32 @@ export const UserForm = ({ currentUser, onSubmit, title, buttonText }) => (
       // handle submit
       onSubmit={onSubmit}
     >
-      <Form className="form flex-1 flex flex-col text-center justify-center justify-between">
+      <Form className="form">
+        <h1 className="title">{title}</h1>
+
         <Field
-          className="field border p-1 rounded border-indigo-900 outline-none text-sm "
+          className="field"
           type="text"
           name="firstname"
           placeholder="Enter Firstname"
         ></Field>
-        <ErrorMessage
-          name="firstname"
-          className=" error text-left italic font-thin text-base text-red-700"
-          component="div"
-        />
+        <ErrorMessage name="firstname" className="error" component="div" />
 
         <Field
-          className="field border p-1 rounded border-indigo-900 outline-none text-sm font-light"
+          className="field"
           type="text"
           name="lastname"
           placeholder="Enter Lastname"
         ></Field>
-        <ErrorMessage
-          name="lastname"
-          className=" error text-xs text-left italic font-thin text-red-700"
-          component="div"
-        />
+        <ErrorMessage name="lastname" className="error" component="div" />
 
         <Field
-          className="field border p-1 rounded border-indigo-900  outline-none text-sm font-light"
+          className="field"
           type="email"
           name="email"
           placeholder="johndoe@gmail.com"
         ></Field>
-        <ErrorMessage
-          name="email"
-          className=" error text-left italic font-thin text-base text-red-700"
-          component="div"
-        />
+        <ErrorMessage name="email" className="error" component="div" />
 
         {/* <Field
             className=""

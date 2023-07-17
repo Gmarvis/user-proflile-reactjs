@@ -38,7 +38,7 @@ export function Profile() {
           <p>{activeUser.email}</p>
         </div>
 
-        <div className="actionBtn flex flex-auto justify-around border-indigo-700 mt-6 text-white">
+        <div className="actionBtn border-indigo-700 text-white">
           <button onClick={handleUpdate} className="profileBtn">
             Edit Profile
           </button>
